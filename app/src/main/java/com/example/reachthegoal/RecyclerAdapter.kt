@@ -54,12 +54,10 @@ class RecyclerAdapter(private val list : List<Goal>) : RecyclerView.Adapter<MyHo
 
         }
 
-        delete.setOnClickListener(){
+        delete.setOnClickListener {
+            viewModel.deleteGoal(list[position])
 
-
-            viewModel.deleteGoal(Goal(holder.Start.toString(),holder.End.toString(),holder.Name.toString()))
-            notifyItemRemoved(holder.adapterPosition)
-
+            holder.itemView.visibility = View.GONE
         }
 
     }
