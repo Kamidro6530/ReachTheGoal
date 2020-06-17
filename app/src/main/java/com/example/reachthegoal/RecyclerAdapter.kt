@@ -20,12 +20,12 @@ import kotlinx.android.synthetic.main.cardview_item.view.*
 import java.lang.Integer.parseInt
 import kotlin.coroutines.coroutineContext
 
-class RecyclerAdapter(private val list : List<Goal>) : RecyclerView.Adapter<MyHolder>() {
-    lateinit var viewModel : GoalViewModel
+class RecyclerAdapter(private val list: List<Goal>) : RecyclerView.Adapter<MyHolder>() {
+    lateinit var viewModel: GoalViewModel
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.cardview_item,parent,false)
+        val view = inflater.inflate(R.layout.cardview_item, parent, false)
         viewModel = ViewModelProvider.AndroidViewModelFactory
             .getInstance(Application()).create(GoalViewModel::class.java)
         return MyHolder(view)
@@ -37,26 +37,26 @@ class RecyclerAdapter(private val list : List<Goal>) : RecyclerView.Adapter<MyHo
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
 
-        val delete : ImageButton = holder.itemView.Icon_BT
+        val delete: ImageButton = holder.itemView.Icon_BT
         holder.Name.text = list[position].name
-        holder.Start.text = "Start : "+list[position].start
-        holder.End.text ="End : "+ list[position].end
+        holder.Start.text = "Start : " + list[position].start
+        holder.End.text = "End : " + list[position].end
+
 
 
         holder.itemView.setOnClickListener {
 
-            val intent = Intent(holder.itemView.context,GoalActivity::class.java)
-          intent.putExtra("Name",list[position].name)
-          intent.putExtra("Start",list[position].start)
-          intent.putExtra("End",list[position].end)
-            startActivity(holder.itemView.context,intent,null)
+            val intent = Intent(holder.itemView.context, GoalActivity::class.java)
+            intent.putExtra("Name", list[position].name)
+            intent.putExtra("Start", list[position].start)
+            intent.putExtra("End", list[position].end)
+            startActivity(holder.itemView.context, intent, null)
 
 
         }
 
         delete.setOnClickListener {
             viewModel.deleteGoal(list[position])
-
             holder.itemView.visibility = View.GONE
         }
 
@@ -64,10 +64,11 @@ class RecyclerAdapter(private val list : List<Goal>) : RecyclerView.Adapter<MyHo
 
 
 }
-class MyHolder(view : View) : RecyclerView.ViewHolder(view){
+
+class MyHolder(view: View) : RecyclerView.ViewHolder(view) {
     val Name = itemView.Title_TV
     val Start = itemView.Start_TV
-    val End =itemView.End_TV
+    val End = itemView.End_TV
 
 }
 

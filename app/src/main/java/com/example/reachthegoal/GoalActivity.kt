@@ -18,9 +18,9 @@ import java.util.*
 
 class GoalActivity : AppCompatActivity() {
 
-    lateinit var  notificationManager : NotificationManager
-    lateinit var  notificationChannel : NotificationChannel
-    lateinit var builder : Notification.Builder
+    lateinit var notificationManager: NotificationManager
+    lateinit var notificationChannel: NotificationChannel
+    lateinit var builder: Notification.Builder
     private val channelId = "com.example.reachthegoal"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,12 +29,12 @@ class GoalActivity : AppCompatActivity() {
 
 
         val Name = intent.getStringExtra("Name")
-        val Start =intent.getStringExtra("Start")
+        val Start = intent.getStringExtra("Start")
         val End = intent.getStringExtra("End")
 
         NameTV.text = Name
-        StartTV.text =  "start date of the challenge $Start"
-        EndTV.text ="end date of the challenge $End"
+        StartTV.text = "start date of the challenge $Start"
+        EndTV.text = "end date of the challenge $End"
 
 
 
