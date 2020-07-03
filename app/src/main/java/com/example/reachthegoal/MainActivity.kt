@@ -1,6 +1,8 @@
 package com.example.reachthegoal
 
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
@@ -11,9 +13,13 @@ import com.example.reachthegoal.GoalViewModel.GoalViewModel
 import com.example.reachthegoal.RoomDatabase.Goal
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.cardview_item.*
+import kotlinx.android.synthetic.main.goalactivity.*
+import java.text.SimpleDateFormat
+import java.time.LocalDate
 
 class MainActivity : AppCompatActivity() {
-    lateinit var list: LiveData<List<Goal>>
+    lateinit var list : LiveData<List<Goal>>
     lateinit var viewModel: GoalViewModel
     lateinit var goalAdapter: RecyclerAdapter
 
@@ -43,6 +49,7 @@ class MainActivity : AppCompatActivity() {
             when (menuItem.itemId) {
                 R.id.add_button -> {
                     val intent = Intent(this, CreateGoal::class.java)
+                    intent.putExtra("list",list.toString())
                     startActivity(intent)
 
                 }
@@ -51,7 +58,4 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-    }
-
-
-}
+}}

@@ -32,5 +32,33 @@
         android:layout_below="@id/StartTV"
         android:textSize="20dp"
         android:text="End" />
+    
+    <TextView
+        android:id="@+id/daysBetweenTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/EndTV"
+        android:text="Days to end reach"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/daysBetweenTV"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Challange progres"
+        android:id="@+id/ProgressTV"
+        android:textSize="20sp"
+        android:layout_below="@id/progressBar"
+        android:layout_centerHorizontal="true"
+        />
+
 
 </RelativeLayout>

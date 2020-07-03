@@ -1,0 +1,3 @@
+-Progres bar z rzeczywistym postępem wyzwania
+-Powiadomienia o wyzwaniu
+-Logowanie FireBase

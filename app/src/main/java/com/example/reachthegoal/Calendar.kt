@@ -25,8 +25,9 @@ class Calendar : AppCompatActivity() {
         calendar.setOnDateChangeListener { view, year, month, dayOfMonth ->
             //Zwiększa liczbe miesiąca o 1 ponieważ kalendarz liczy miesiące od 0 do 11
             val month1up = month + 1
-
-            DateTV.text = "$dayOfMonth / $month1up / $year"
+            //Dodanie 0 przed jednocyfrowym miesiącem
+            var mo = String.format("%02d",month1up)
+            DateTV.text = "$dayOfMonth / $mo / $year"
 
         }
         EnterDateBT.setOnClickListener {

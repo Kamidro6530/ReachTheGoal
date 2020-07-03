@@ -11,6 +11,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_delete_black_18dp"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
             android:layout_below="@id/Title_TV"
             android:id="@+id/Icon_BT"
             />
@@ -18,7 +19,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Title"
+        android:layout_marginTop="8dp"
         android:id="@+id/Title_TV"
+        android:textSize="22sp"
         android:layout_centerHorizontal="true"
         />
     <TextView
@@ -26,15 +29,33 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/Title_TV"
         android:id="@+id/Start_TV"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
         android:text="Start"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Start_TV"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
         android:id="@+id/End_TV"
         android:text="End"/>
 
+        <ProgressBar
+            android:id="@+id/progressBarItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_below="@id/End_TV"
+
+            />
 
     </RelativeLayout>
 
