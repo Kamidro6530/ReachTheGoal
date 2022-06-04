@@ -1,20 +1,13 @@
 package com.example.reachthegoal
 
-import android.content.res.ColorStateList
+import android.content.Intent
 import android.content.res.ColorStateList.valueOf
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
-
 import kotlinx.android.synthetic.main.goalactivity.*
 import java.text.SimpleDateFormat
-import java.time.Duration
 import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.time.temporal.ChronoUnit
 import java.util.concurrent.TimeUnit
 
 
@@ -24,18 +17,20 @@ class GoalActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.goalactivity)
 
-        val Name = intent.getStringExtra("Name")
-        val Start = intent.getStringExtra("Start")
-        val End = intent.getStringExtra("End")
+        val name = intent.getStringExtra("Name")
+        val start = intent.getStringExtra("Start")
+        val end = intent.getStringExtra("End")
+        val firstNotificationTime = intent.getStringExtra("firstNotification")
+        val numberOfNotification = intent.getStringExtra("numberOfNotification")
 
-        NameTV.text = Name
-        StartTV.text = "Data rozpoczęcia wyzwania $Start"
-        EndTV.text = "Data zakończenia wyzwania $End"
+        NameTV.text = name
+        StartTV.text = "Data rozpoczęcia wyzwania $start"
+        EndTV.text = "Data zakończenia wyzwania $end"
 
 
         //Podzielenie stringa do obliczania dni do końca wyzwania
-        val splitStartDate = Start.split(" / ")
-        val splitEndDate = End.split(" / ")
+        val splitStartDate = start.split(" / ")
+        val splitEndDate = end.split(" / ")
         var splitNowDate = LocalDate.now().toString().split("-")
         //Sprawdza czy obie daty mają wspólny miesiąc
         var m = months(splitStartDate, splitEndDate)
@@ -95,7 +90,8 @@ class GoalActivity : AppCompatActivity() {
             progressBar.rotation = 180.toFloat()
             progressBar.progressTintList = valueOf(Color.GRAY)
             progressBar.progressBackgroundTintList = valueOf(Color.rgb(98, 0, 238))
-            progressBar.progress =percentage(daysBetween.toDouble(), durationInDays.toDouble()).toInt()
+            progressBar.progress =
+                percentage(daysBetween.toDouble(), durationInDays.toDouble()).toInt()
             if (daysBetween > 0)
                 ProgressTV.text =
                     "Dni do końca " + TimeUnit.DAYS.convert(daysBetween, TimeUnit.MILLISECONDS)
@@ -103,6 +99,12 @@ class GoalActivity : AppCompatActivity() {
                 ProgressTV.text = "Wyzwanie ukończone ! "
 
 
+        }
+        goalSettingsIBT.setOnClickListener {
+            val intent = Intent(this,GoalSettingsActivity::class.java)
+            intent.putExtra("firstNotification",firstNotificationTime)
+            intent.putExtra("numberOfNotification",numberOfNotification)
+            startActivity(intent)
         }
     }
 

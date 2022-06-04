@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/breakTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="TEXT"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        />
+    <TextView
+        android:id="@+id/days_break"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/breakTV"
+        android:text="BRAKE_DAYS_INFO"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        />
+    <Button
+        android:id="@+id/breakBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="Wróć"
+        android:textColor="#FFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/days_break"/>
+</RelativeLayout>

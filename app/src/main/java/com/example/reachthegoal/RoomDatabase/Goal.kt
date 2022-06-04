@@ -8,10 +8,11 @@ import java.io.Serializable
 
 data class Goal(
 
-    val  start : String,
-    val end : String,
-    val name : String
-) : Serializable{
+    val start: String,
+    val end: String,
+    val name: String,
+    val numberOfBreaks : Int
+) : Serializable {
     @PrimaryKey(autoGenerate = true)
-    var id : Int = 0
+    var id: Int = 0
 }

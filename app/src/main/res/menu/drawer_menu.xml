@@ -8,4 +8,24 @@
         android:icon="@drawable/ic_add_circle_outline_black_24dp"
         />
 
+    <item android:id="@+id/notifications_button"
+        android:title="Ustawienia przypomnień "
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_alarm_on_24"
+        />
+
+    <item android:id="@+id/send_notification"
+        android:title="Wyslij powiadomienie"
+        app:showAsAction="always"
+        />
+
+    <item android:id="@+id/list_check"
+        android:title="Dzisiejsze wyzwania "
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_done_all_24"
+        />
+    <item android:id="@+id/goal_list"
+        android:title="Lista wyzwań"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_list_24"/>
 </menu>

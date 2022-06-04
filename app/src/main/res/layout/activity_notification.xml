@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".NotificationActivity">
+
+    <TextView
+        android:id="@+id/Notification_mainTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="40px"
+        android:text="Przypomnienia"
+        android:textColor="#FFF"
+        android:textSize="32sp"
+
+        />
+
+    <TextView
+        android:id="@+id/ChooseNotificaionNumberTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Notification_mainTV"
+        android:layout_centerHorizontal="true"
+        android:text="Wybierz ilość przypomnień"
+
+        />
+
+    <TextView
+        android:id="@+id/NotificationNumberTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ChooseNotificaionNumberTV"
+        android:layout_centerHorizontal="true"
+        android:padding="40px"
+        android:text="0"
+        android:textSize="50px" />
+
+    <ImageView
+        android:id="@+id/ImageUpBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ChooseNotificaionNumberTV"
+        android:layout_marginTop="35px"
+        android:layout_toRightOf="@id/NotificationNumberTV"
+        android:src="@drawable/ic_add_circle_outline_black_24dp" />
+    <ImageView
+        android:id="@+id/ImageDownBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ChooseNotificaionNumberTV"
+        android:layout_marginTop="35px"
+        android:layout_toLeftOf="@id/NotificationNumberTV"
+
+        android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+    <TextView
+        android:id="@+id/datePickerTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ImageUpBT"
+        android:layout_centerHorizontal="true"
+        android:padding="30px"
+        android:text="Wybierz godzinę pierwszego powiadomnienia" />
+
+    <TimePicker
+        android:id="@+id/FirstdatePicker"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/datePickerTV"
+        android:layout_centerHorizontal="true"
+        android:timePickerMode="spinner"
+        />
+
+
+    <Button
+        android:id="@+id/NotificationEnterBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/FirstdatePicker"
+        android:text="Potwierdź"
+        android:background="@color/colorPrimary"
+        android:textColor="#FFFF"
+        />
+
+</RelativeLayout>

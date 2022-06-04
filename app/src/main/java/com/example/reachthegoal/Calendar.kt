@@ -15,7 +15,8 @@ class Calendar : AppCompatActivity() {
         val textStartButton = intent.getStringExtra("textStartButton")
         val textEndButton = intent.getStringExtra("textEndButton")
         val name = intent.getStringExtra("name")
-
+        var firstNotification = intent.getStringExtra("firstNotification")
+        var numberOfNotification = intent.getStringExtra("numberOfNotification")
         val whichButton = "start"
         //Sprawdza czy użytkownik przyszedł do aktywności z przycisku start
         if (intent.getStringExtra("start") == whichButton) {
@@ -26,10 +27,11 @@ class Calendar : AppCompatActivity() {
             //Zwiększa liczbe miesiąca o 1 ponieważ kalendarz liczy miesiące od 0 do 11
             val month1up = month + 1
             //Dodanie 0 przed jednocyfrowym miesiącem
-            var mo = String.format("%02d",month1up)
+            var mo = String.format("%02d", month1up)
             DateTV.text = "$dayOfMonth / $mo / $year"
 
         }
+
         EnterDateBT.setOnClickListener {
             //Blokuje możliwość przejścia dalej bez wybrania daty
             if (DateTV.text.toString() != mustSelect) {
@@ -39,11 +41,17 @@ class Calendar : AppCompatActivity() {
                     intent.putExtra("name", name)
                     //Wysyłanie tekstu z przycisku zpowrotem do aktywności
                     intent.putExtra("date2", textEndButton)
+                    intent.putExtra("firstNotification",firstNotification)
+                    intent.putExtra("numberOfNotification",numberOfNotification)
+
                 } else {
                     intent.putExtra("name", name)
                     intent.putExtra("date2", DateTV.text.toString())
                     //Wysyłanie tekstu z przycisku zpowrotem do aktywności
                     intent.putExtra("date", textStartButton)
+                    intent.putExtra("firstNotification",firstNotification)
+                    intent.putExtra("numberOfNotification",numberOfNotification)
+
                 }
 
                 startActivity(intent)
@@ -52,13 +60,6 @@ class Calendar : AppCompatActivity() {
             }
         }
     }
-
-
-
-
-
-
-
 
 
 }

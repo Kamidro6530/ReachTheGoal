@@ -12,65 +12,71 @@
     <TextView
         android:id="@+id/CreateTVname"
         android:layout_width="match_parent"
-        android:padding="40px"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:padding="40px"
         android:text="Wpisz nazwę celu" />
+
     <EditText
-        android:layout_width="match_parent"
         android:id="@+id/CreateETname"
-        android:gravity="center"
-        android:padding="40px"
-        android:hint="Wpisz nazwę"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/CreateTVname"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:layout_width="match_parent"
         android:gravity="center"
-        android:padding="40px"
-        android:layout_height="wrap_content"
+        android:hint="Wpisz nazwę"
+        android:padding="40px" />
+
+    <TextView
         android:id="@+id/ChooseTVstart"
-        android:layout_below="@+id/CreateETname"
-        android:text="Wybierz datę rozpoczęcia wyzwania"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:padding="40px"
-        android:background="@color/colorPrimary"
-        android:textColor="#FFFF"
-        android:text="Wybierz"
-        android:layout_below="@+id/ChooseTVstart"
-        android:id="@+id/ChooseBTstart"/>
-    <TextView
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CreateETname"
         android:gravity="center"
-        android:layout_height="wrap_content"
-        android:id="@+id/ChooseTVend"
         android:padding="40px"
-        android:text="Wybierz datę zakończenia wyzwania "
-        android:layout_below="@+id/ChooseBTstart"
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="40px"
-        android:text="Wybierz"
-        android:background="@color/colorPrimary"
-        android:textColor="#FFFF"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/ChooseTVend"
-        android:id="@+id/ChooseBTend"/>
+        android:text="Wybierz datę rozpoczęcia wyzwania" />
 
     <Button
+        android:id="@+id/ChooseBTstart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/EnterBT"
-        android:layout_below="@+id/ChooseBTend"
+        android:layout_below="@+id/ChooseTVstart"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
         android:padding="40px"
-        android:text="Potwierdź"
+        android:text="Wybierz"
+        android:textColor="#FFFF" />
+
+    <TextView
+        android:id="@+id/ChooseTVend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ChooseBTstart"
+        android:gravity="center"
+        android:padding="40px"
+        android:text="Wybierz datę zakończenia wyzwania " />
+
+    <Button
+        android:id="@+id/ChooseBTend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ChooseTVend"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:padding="40px"
+        android:text="Wybierz"
+        android:textColor="#FFFF" />
+
+
+
+    <Button
+        android:id="@+id/EnterBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ChooseBTend"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:background="@color/colorPrimary"
-        android:textColor="#FFFF"
-        android:layout_centerHorizontal="true"/>
+        android:padding="40px"
+        android:text="Potwierdź"
+        android:textColor="#FFFF" />
 </RelativeLayout>
